@@ -1,23 +1,24 @@
-# Temel image olarak resmi Maven + JDK image'ını kullanıyoruz
-FROM maven:3.9.4-eclipse-temurin-21 AS build
+# Temel image
+FROM openjdk:21-jdk-slim
 
-# Çalışma dizinini belirle
+# Çalışma dizini
 WORKDIR /app
 
-# Pom ve kaynak dosyalarını kopyala
+# Maven wrapper ve pom dosyasını kopyala
+COPY mvnw .
 COPY pom.xml .
+
+# Maven wrapper izinlerini ver
+RUN chmod +x mvnw
+
+# Bağımlılıkları indir
+RUN ./mvnw dependency:go-offline
+
+# Kaynak kodu kopyala
 COPY src ./src
 
-# Maven ile package oluştur
-RUN mvn clean package -DskipTests
+# Uygulamayı paketle
+RUN ./mvnw clean package -DskipTests
 
-# Yeni bir JDK image'ında sadece çalıştırma için package'ı al
-FROM eclipse-temurin:21-jdk-jammy
-
-WORKDIR /app
-
-# Build aşamasından jar dosyasını al
-COPY --from=build /app/target/*.jar app.jar
-
-# Jar dosyasını çalıştır
-ENTRYPOINT ["java", "-jar", "app.jar"]
+# Çalıştır
+CMD ["java", "-jar", "target/privateRezerve-1.0-SNAPSHOT.jar"]
