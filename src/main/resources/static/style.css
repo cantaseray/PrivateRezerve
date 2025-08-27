@@ -1,0 +1,97 @@
+/* Genel Ayarlar */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #74ebd5, #acb6e5);
+    color: #2f3640;
+}
+
+header {
+    text-align: center;
+    padding: 30px 0;
+    background-color: rgba(255,255,255,0.2);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+header h1 {
+    font-size: 2.5em;
+    color: #fff;
+}
+
+/* Ana Container */
+main {
+    width: 90%;
+    max-width: 600px;
+    margin: 30px auto;
+}
+
+/* Panel Stilleri */
+.panel {
+    background-color: rgba(255,255,255,0.9);
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+}
+
+.panel:hover {
+    transform: translateY(-5px);
+}
+
+.panel h2 {
+    color: #40739e;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+/* Input ve Select */
+input, select, button {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+    font-size: 15px;
+    border-radius: 8px;
+    border: 1px solid #dcdde1;
+    outline: none;
+}
+
+input:focus, select:focus {
+    border-color: #40739e;
+    box-shadow: 0 0 5px rgba(64,115,158,0.5);
+}
+
+/* Button */
+button {
+    background-color: #40739e;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #273c75;
+    transform: scale(1.05);
+}
+
+/* Result alanı */
+#result {
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px 0;
+    color: #fff;
+    font-size: 0.9em;
+}
