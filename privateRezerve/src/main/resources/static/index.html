@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rezervasyon Sitesi</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+<header>
+    <h1>Rezervasyon Sistemi</h1>
+</header>
+
+<main>
+    <div class="panel">
+        <h2>İşletme Ekle</h2>
+        <input type="text" id="businessNameInput" placeholder="İşletme Adı">
+        <button id="addBusinessBtn">Ekle</button>
+    </div>
+
+    <div class="panel">
+        <h2>İşletmeye Slot Ekle</h2>
+        <select id="businessSelectForSlot">
+            <option value="">İşletme Seçin</option>
+        </select>
+        <input type="datetime-local" id="slotDateInput">
+        <button id="addSlotBtn">Slot Ekle</button>
+    </div>
+
+    <div class="panel">
+        <h2>Rezervasyon Yap</h2>
+        <select id="businessSelect">
+            <option value="">İşletme Seçin</option>
+        </select>
+        <input type="text" id="customerName" placeholder="Adınız">
+        <input type="datetime-local" id="reservationDate">
+        <button id="reserveBtn">Rezervasyon Yap</button>
+    </div>
+
+    <div class="panel">
+        <h2>Rezervasyonlar</h2>
+        <table id="reservationTable">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Müşteri</th>
+                <th>İşletme ID</th>
+                <th>Güncelle</th>
+                <th>Sil</th>
+            </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <div class="panel">
+        <h2>Müsaitlik Saatleri</h2>
+        <table id="availabilityTable">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Gün</th>
+                <th>Başlangıç</th>
+                <th>Bitiş</th>
+                <th>Güncelle</th>
+                <th>Sil</th>
+            </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <div id="result"></div>
+</main>
+
+<footer>
+    <p>© 2025 Rezervasyon Sistemi</p>
+</footer>
+</body>
+</html>
